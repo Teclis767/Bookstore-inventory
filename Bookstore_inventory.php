@@ -59,14 +59,6 @@ function removeBook(&$inventory, $title) {
   $inventory = array_values($inventory); // Reindex the array
 };
 
-//temporary display function to check code.
-function display($inventory) {
-  foreach ($inventory as $book) {
-    print_r($book);
-    echo "</br>";
-  };
-};
-
 // function updating quantity based on title and new quantity
 function updateQuantity(&$inventory, $title, $newQuantity) {
   foreach($inventory as $index => $book) {
@@ -75,7 +67,6 @@ function updateQuantity(&$inventory, $title, $newQuantity) {
     };
   };
 };
-
 
 // Sorts the inventory by the specified property (title, author, price, or quantity)
 function sortInventory(&$inventory, $sortBy){
@@ -102,6 +93,17 @@ function sortInventory(&$inventory, $sortBy){
 
 
 
+
+//TESTING CODE BELOW
+
+//temporary display function to check code.
+function display($inventory) {
+  foreach ($inventory as $book) {
+    print_r($book);
+    echo "</br>";
+  };
+};
+
 echo "Original inventory: </br>";
 display($inventory);
 echo "</br>";
@@ -123,9 +125,5 @@ echo "</br>";
 
 echo "Inventory after sortInventory function(by price): </br>";
 sortInventory($inventory, "price");
-display($inventory);
-?>
-echo "</br>";
-sortInventory($inventory, "title");
 display($inventory);
 ?>
